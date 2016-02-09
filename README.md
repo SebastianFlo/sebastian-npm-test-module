@@ -10,7 +10,7 @@
 
 ###Security Issues
 
-If you discover a security vulnerability in Express, please see [Security Policies and Procedures](Security.md).
+Shouldn't be hard to find them. 
 
 ## Quick Start
 
