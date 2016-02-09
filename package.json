@@ -1,0 +1,23 @@
+{
+  "name": "sebastian-npm-test-module",
+  "version": "1.0.0",
+  "description": "My first module",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastianFlo/sebastian-npm-test-module.git"
+  },
+  "author": "Sebastian Florian (@SebFlorian)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebastianFlo/sebastian-npm-test-module/issues"
+  },
+  "homepage": "https://github.com/SebastianFlo/sebastian-npm-test-module#readme"
+}
