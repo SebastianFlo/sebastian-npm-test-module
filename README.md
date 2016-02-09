@@ -1,0 +1,1 @@
+# sebastian-npm-test-module
