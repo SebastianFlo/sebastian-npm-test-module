@@ -6,23 +6,38 @@ var eventEmitter = new events.EventEmitter();
 
 console.log('Program Started');
 
-// create an event handler
-var connectHandler = function connectHandler(){
-    console.log('connection successful...');
-    
-    // fire the data_received event
-    eventEmitter.emit('data_received');
+//  listener #1
+
+var listener1 = function listener1(){
+    console.log('listener1 executed');
 }
 
-// bind the connection event with the handler
-eventEmitter.on('connection', connectHandler);
+//  listener #2
 
-// bind the data_received event with an anonymous function
-eventEmitter.on('data_received', function () {
-    console.log('data received successfully');
-})
+var listener2 = function listener2(){
+    console.log('listener2 executed');
+}
 
-// fire the connection event
+// Bind the connection event with the listener1 function
+eventEmitter.addListener('connection', listener1);
+
+// Bind the connection event with the listener2 function
+eventEmitter.on('connection', listener2);
+
+var eventListeners = require('events').EventEmitter.listenerCount(eventEmitter, 'connection');
+console.log(eventListeners + ' Listener(s) listening to \'connection\' event');
+
+// Fire the connection event
 eventEmitter.emit('connection');
+
+// Remove the binding of listener1
+eventEmitter.removeListener('connection', listener1);
+console.log('Listener1 will no longer listen');
+
+// Fire the connection event
+eventEmitter.emit('connection');
+
+var eventListeners = require('events').EventEmitter.listenerCount(eventEmitter, 'connection');
+console.log(eventListeners + ' Listener(s) listening to \'connection\' event');
 
 console.log('Program Ended');
