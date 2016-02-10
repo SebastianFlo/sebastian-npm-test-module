@@ -1,14 +1,28 @@
-// filesystem module
-var fs = require('fs');
-
 // event module
 var events = require('events');
 
-fs.readFile('input.txt', function (err, data) {
-    if (err) {
-        return console.error(err);
-    }
-    console.log(data.toString())
+// create an eventEmitter object
+var eventEmitter = new events.EventEmitter();
+
+console.log('Program Started');
+
+// create an event handler
+var connectHandler = function connectHandler(){
+    console.log('connection successful...');
+    
+    // fire the data_received event
+    eventEmitter.emit('data_received');
+}
+
+// bind the connection event with the handler
+eventEmitter.on('connection', connectHandler);
+
+// bind the data_received event with an anonymous function
+eventEmitter.on('data_received', function () {
+    console.log('data received successfully');
 })
 
-console.log("Program Ended");
+// fire the connection event
+eventEmitter.emit('connection');
+
+console.log('Program Ended');
