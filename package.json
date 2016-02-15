@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "test",
-    "start": "webpack-dev-server ./client.js",
+    "start": "webpack --progress --colors && webpack-dev-server --progress --colors",
     "docs": "jsdoc ./out ."
   },
   "repository": {

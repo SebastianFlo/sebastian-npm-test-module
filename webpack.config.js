@@ -1,8 +1,10 @@
 module.exports = {
-    entry: './index.js',
+    context: __dirname,
+    entry: './client.js',
     output: {
-        path: __dirname,
-        filename: 'bundle.js'
+        path: __dirname + '/dist',
+        filename: 'bundle.js',
+        sourceMapFilename: 'bundle.map.js'
     },
     module: {
         loaders: [
