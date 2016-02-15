@@ -8,10 +8,14 @@
     "jsdoc": "^3.4.0"
   },
   "devDependencies": {
-    "jshint": "^2.9.1"
+    "jshint": "^2.9.1",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "webpack-dev-server ./client.js",
+    "docs": "jsdoc ./out ."
   },
   "repository": {
     "type": "git",

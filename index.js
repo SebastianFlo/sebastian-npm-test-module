@@ -11,4 +11,5 @@ http.createServer(function (req, res) {
 }).listen(8081);
 
 // Console will print the message:
-console.log('Server running at localhost : 8081')
+console.log('Server running at localhost : 8081');
+
