@@ -14,5 +14,6 @@
 // module.exports = angular;
 var $ = require('jquery');
 
-require('css!./bear.css');
+require('./bear.css');
+
 module.exports = $('<div/>').html('grizly growl!');
