@@ -2,7 +2,7 @@
   "name": "sebastian-npm-test-module",
   "version": "1.1.2",
   "description": "My first module",
-  "main": "index.js",
+  "main": "global.js",
   "dependencies": {
     "express": "^4.13.4",
     "jsdoc": "^3.4.0"
@@ -15,7 +15,8 @@
   },
   "scripts": {
     "test": "test",
-    "start": "webpack --progress --colors && webpack-dev-server --progress --colors",
+    "start": "node global.js",
+    "webpack": "webpack --progress --colors && webpack-dev-server --progress --colors",
     "docs": "jsdoc ./out ."
   },
   "repository": {

@@ -138,34 +138,34 @@ console.log('////////////////////////');
 //     console.log('Director created successfully.');
 // });
 
-console.log('Now we\'re going to read a directory');
+// console.log('Now we\'re going to read a directory');
 
-fs.readdir('./', function (err, files) {
-    if (err) {
-        return console.error(err);
-    }
-    files.forEach( function(file) {
-        console.log(file);
-    });
-    console.log('Director read successfully.');
-});
+// fs.readdir('./', function (err, files) {
+//     if (err) {
+//         return console.error(err);
+//     }
+//     files.forEach( function(file) {
+//         console.log(file);
+//     });
+//     console.log('Director read successfully.');
+// });
 
 
-console.log('Now we\'re going to delete a directory');
+// console.log('Now we\'re going to delete a directory');
 
-fs.rmdir('./test', function (err) {
-    if (err) {
-        return console.error(err);
-    }
-    console.log('Director deleted successfully.');
+// fs.rmdir('./test', function (err) {
+//     if (err) {
+//         return console.error(err);
+//     }
+//     console.log('Director deleted successfully.');
     
-    fs.readdir('./', function (err, files) {
-        if (err) {
-            return console.error(err);
-        }
-        files.forEach( function(file) {
-            console.log(file);
-        });
-        console.log('Director read successfully.');
-    });
-});
+//     fs.readdir('./', function (err, files) {
+//         if (err) {
+//             return console.error(err);
+//         }
+//         files.forEach( function(file) {
+//             console.log(file);
+//         });
+//         console.log('Director read successfully.');
+//     });
+// });
