@@ -5,10 +5,9 @@
 			"name": "Launch",
 			"type": "node",
 			"request": "launch",
-			"program": "utility.js",
+			"program": "${workspaceRoot}/server.js",
 			"stopOnEntry": false,
 			"args": [],
-			"cwd": ".",
 			"runtimeExecutable": null,
 			"runtimeArgs": [
 				"--nolazy"
