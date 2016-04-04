@@ -1,12 +1,40 @@
-var net = require('net');
-var server = net.createServer(function(connection) {
-    console.log('client connected');
-    connection.on('end', function() {
-        console.log('client disconnected');
+var http = require('http');
+
+var fs = require('fs');
+
+var url = require('url');
+
+// Create a server
+http.createServer( function (request, response) {
+    
+    // Parse the request containing file name
+    var pathname = url.parse(request.url).pathname;
+    
+    // Print the name of the file for which request is made 
+    console.log('Request for ' + pathname + ' received');
+    
+    // Read the requested file content from file system
+    
+    fs.readFile(pathname.substr(1), function (err, data) {
+        if (err) {
+            console.log(err);
+            // HTTP Status : 404 / Not found
+            // Content Type : text/plain
+            response.writeHead(404, {'Content-Type': 'text/html'});
+        } else {
+            // Page found
+            // HTTP Status 200 : OK
+            // Content type: text/plain
+            response.writeHead(200, {'Content-Type': 'text/html'});
+            
+            // Write the content of the file to the response body
+            response.write(data.toString());
+        }
+        
+        // Send the response body
+        response.end();
     });
-    connection.write('Hello World!\r\n');
-    connection.pipe(connection);
-});
-server.listen(8080, function() {
- console.log('server is listening');
-});
+}).listen(8081);
+
+// Console will print the message
+console.log('Server running at http://localhost:8081/');
