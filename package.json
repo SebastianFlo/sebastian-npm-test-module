@@ -4,8 +4,11 @@
   "description": "My first module",
   "main": "utility.js",
   "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
-    "jsdoc": "^3.4.0"
+    "jsdoc": "^3.4.0",
+    "multer": "^1.1.0"
   },
   "devDependencies": {
     "jshint": "^2.9.1",
